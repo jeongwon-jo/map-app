@@ -2,20 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 52px;
+  padding: 0 18px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  background-color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.navbar__logo {
+  color: darkblue;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar__list {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.navbar__button {
+  display: none;
+}
+
+.navbar__list--item {
+  cursor: pointer;
+}
+
+.navbar__list--item:hover {
+  color: darkgray;
+}
+
+.layout {
+  padding-top: 52px;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar__list {
+    display: none;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  .navbar__button {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .navbar--mobile {
+    position: fixed;
+    width: 100%;
+    top: 52px;
+    background-color: darkblue;
+    color: #fff;
+    height: 100vh;
+  }
+
+  .navbar__list--item--mobile {
+    cursor: pointer;
+  }
+
+  .navbar__list--item--mobile:hover {
+    color: darkgray;
+  }
+
+  .navbar__list--mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: start;
+    padding: 24px 18px;
+  }
 }
