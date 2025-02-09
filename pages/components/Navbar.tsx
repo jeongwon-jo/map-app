@@ -6,8 +6,6 @@ import { IoClose } from "react-icons/io5";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(isOpen);
-  
   return (
     <>
       <div className="navbar">
@@ -34,7 +32,7 @@ export default function Navbar() {
             <Link href="/users/login" className="navbar__list--item--mobile">로그인</Link>
           </div>
         </div>
-      ): <></>}
+      ): ""}
     </>
   )
 }
